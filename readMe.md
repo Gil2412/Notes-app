@@ -25,6 +25,8 @@ Our notes application offers a range of user-friendly features to help you manag
 - **Customize Note Colors**: Personalize your notes by choosing different colors for each one.
 
 - **Batch Delete**: Delete all of your notes in one go when needed.
+  
+- **CTRL/CMD + ENTER**: Use "CRTL/CMD + ETNER" keys as shortcut to create note.
 
 ## Planning to Implement
 
