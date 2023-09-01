@@ -53,4 +53,4 @@ Our application is composed of the following main components:
 
 - **Sort By Selector**: Easily sort your notes in ascending or descending order based on your preferences.
 
-Thank you for choosing my Notes Application. We're committed to providing you with a top-notch note-taking experience, and we'll keep working to make it even better. If you have any feedback or encounter any issues, please don't hesitate to reach out to us. Happy note-taking!# Notes-app
+Thank you for choosing my Notes Application. If you have any feedback or encounter any issues, please don't hesitate to reach out to us.
