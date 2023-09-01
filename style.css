@@ -1,0 +1,622 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+:root {
+  --navbarColor: rgb(96, 112, 255);
+  --blueColor: rgb(157, 211, 255);
+  --greenColor: rgb(167, 255, 192);
+  --yellowColor: rgb(255, 246, 174);
+  --pinkColor: rgb(255, 184, 241);
+  --purpleColor: rgb(210, 184, 255);
+  --orangeColor: rgb(255, 210, 184);
+  --redColor: rgb(255, 187, 187);
+  --formBackground: rgb(121, 135, 255);
+  --onClickColor: rgb(90, 51, 174);
+}
+
+header {
+  background-color: var(--navbarColor);
+  box-sizing: content-box;
+  height: 60px;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Delete all popUp */
+.delAllPopUP {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: var(--formBackground);
+  color: white;
+  top: 30%;
+  left: 40%;
+  height: 250px;
+  width: 350px;
+  z-index: 999;
+  transition: 100ms ease-in-out;
+}
+
+#popUpTitle {
+  font-size: 30px;
+}
+
+#popUpText {
+  text-align: center;
+  font-size: 18px;
+  width: 300px;
+}
+
+.btnsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.popUpBtn {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+#acceptBtn {
+  transition: 200ms ease-in-out;
+}
+
+#acceptBtn:hover {
+  background-color: var(--redColor);
+  color: brown;
+}
+
+.popUpBackground {
+  position: absolute;
+  display: none;
+  background-color: black;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 998;
+}
+
+.bi-list {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  margin-left: 40px;
+  top: 1%;
+  cursor: pointer;
+  z-index: 100;
+  transition: 300ms ease-in-out;
+}
+
+.searchContainer {
+  position: relative;
+  top: 12px;
+  float: right;
+  z-index: 900;
+}
+
+#searchLine {
+  background-color: var(--navbarColor);
+  color: white;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  width: 200px;
+}
+
+#searchLine::placeholder {
+  color: white;
+}
+
+#searchLine:focus::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+#searchIcon {
+  position: relative;
+  color: white;
+  font-size: 20px;
+  top: 1px;
+  right: 38px;
+}
+
+.bi-x-circle {
+  cursor: pointer;
+}
+
+.filterBtnsContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  top: 12px;
+  z-index: 995;
+}
+
+.filterBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--formBackground);
+  color: white;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 0.8rem;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.filterBtn:hover {
+  background-color: rgb(40, 44, 81);
+  scale: 1.1;
+}
+
+#starFilter.active {
+  background-color: rgb(40, 44, 81);
+  border: 3px solid var(--yellowColor);
+  scale: 1.1;
+}
+
+#dateFilter.active {
+  background-color: rgb(40, 44, 81);
+  border: 3px solid var(--greenColor);
+  scale: 1.1;
+}
+
+/* Sidebar design */
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--formBackground);
+  left: -300px;
+  height: 100vh;
+  width: 300px;
+  z-index: 995;
+  transition: 300ms ease-in-out;
+}
+
+.bi-x-lg {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  margin-left: 40px;
+  top: 1%;
+  cursor: pointer;
+  z-index: 100;
+  transition: 300ms ease-in-out;
+}
+
+.bi-trash3-fill.form {
+  position: absolute;
+  color: var(--redColor);
+  font-size: 30px;
+  top: 25px;
+  left: 80%;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.bi-trash3-fill.form:hover {
+  color: rgb(255, 127, 127);
+}
+
+.titleContainer {
+  position: relative;
+  margin: 100px 0 0 47px;
+}
+
+#titleInput {
+  background-color: var(--formBackground);
+  color: white;
+  font-size: 20px;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  width: 80%;
+}
+
+#titleInputLabel {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  left: 5px;
+  pointer-events: none;
+  transform: translateY(0.7rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#titleInput:focus,
+input:valid {
+  border: 1.5px solid var(--onClickColor);
+  outline: none;
+}
+
+#titleInput:focus ~ label,
+input:valid ~ label {
+  background-color: var(--formBackground);
+  color: var(--onClickColor);
+  border-radius: 50%;
+  padding: 0 1em;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.textInputContainer {
+  position: relative;
+  margin: 20px 0 20px 25px;
+}
+
+#nBodyText {
+  background-color: var(--formBackground);
+  color: white;
+  font-size: 20px;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  height: 170px;
+  width: 90%;
+  resize: none;
+}
+
+#nBodyTextLabel {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  left: 20px;
+  pointer-events: none;
+  transform: translateY(0.7rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#nBodyText:focus,
+input:valid {
+  border: 1.5px solid var(--onClickColor);
+  outline: none;
+}
+
+#nBodyText:focus ~ label,
+input:valid ~ label {
+  background-color: var(--formBackground);
+  color: var(--onClickColor);
+  border-radius: 50%;
+  padding: 0 1em;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.dateContainer {
+  position: relative;
+  margin: 15px 27%;
+}
+
+#nDateLable {
+  position: absolute;
+  background-color: var(--formBackground);
+  color: white;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 0rem 0.8rem;
+  left: 3%;
+  bottom: 85%;
+}
+
+#nDate {
+  background-color: var(--formBackground);
+  color: white;
+  font-size: 15px;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  padding: 10px;
+  height: 45px;
+  width: 130px;
+}
+
+#nColor {
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  outline: none;
+  margin-left: 50px;
+  padding: 0 20px;
+  height: 45px;
+  width: 65%;
+  cursor: pointer;
+  z-index: 500;
+  -webkit-appearance: none;
+}
+
+.bi-caret-down-fill {
+  position: relative;
+  color: white;
+  left: 72%;
+  bottom: 4%;
+  cursor: pointer;
+}
+
+#submitBtn {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  margin: 10px 0 0 24%;
+  padding: 10px;
+  height: 40px;
+  width: 50%;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+#submitBtn:hover {
+  background-color: var(--onClickColor);
+  color: white;
+}
+
+/* Note design */
+.elementContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+}
+
+.nContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 100px 0;
+  top: 0;
+  left: 7.5%;
+  width: 90%;
+}
+
+.nBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 0px gray;
+  margin: 15px 10px;
+  height: 250px;
+  width: 250px;
+  z-index: 900;
+  transition: 300ms ease-in-out;
+}
+
+.nBody:hover {
+  box-shadow: 0 5px 8px 1px gray;
+}
+
+.nTitle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  outline-style: none;
+  overflow: hidden;
+  border: none;
+  height: 25px;
+  width: 75%;
+}
+
+.nBodyDueInDate {
+  position: relative;
+  color: black;
+  font-size: 12px;
+  opacity: 0.5;
+  padding-left: 18px;
+  width: 100%;
+}
+
+.nBodyText {
+  position: relative;
+  outline-style: none;
+  background-color: transparent;
+  font-size: 16px;
+  overflow-x: auto;
+  border: none;
+  height: 130px;
+  width: 85%;
+  resize: none;
+}
+
+.nBodyFooter {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.nBodyCreatedDate {
+  position: relative;
+  color: black;
+  font-size: 12px;
+  padding-left: 10px;
+  opacity: 0.5;
+  left: 3%;
+}
+
+.bi-star-fill.body {
+  visibility: hidden;
+  position: relative;
+  color: black;
+  opacity: 0;
+  right: 6%;
+  transition: 200ms ease-in-out;
+}
+
+.optionsDiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: var(--formBackground);
+  border-radius: 0 20px 20px 0;
+  bottom: 15%;
+  right: 90px;
+  height: 150px;
+  padding: 10px 15px;
+  z-index: 300;
+  transition: 300ms ease-in;
+}
+
+/* Icons design */
+.bi-three-dots-vertical {
+  position: relative;
+  font-size: 20px;
+  margin-right: 15px;
+  opacity: 0.5;
+  top: 3%;
+  left: 47%;
+  height: 20px;
+  z-index: 200;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.bi-x {
+  position: relative;
+  font-size: 20px;
+  margin-right: 15px;
+  opacity: 0.5;
+  top: 3%;
+  left: 47%;
+  height: 20px;
+  z-index: 200;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.bi-pencil-square {
+  color: white;
+  font-size: 22px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.bi-pencil-square:hover {
+  scale: 1.1;
+}
+
+.bi-check2 {
+  color: var(--greenColor);
+  font-size: 25px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.bi-check2:hover {
+  scale: 1.2;
+}
+
+.bi-trash3-fill {
+  color: white;
+  font-size: 25px;
+  height: 30px;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.bi-trash3-fill:hover {
+  scale: 1.1;
+}
+
+.bi-star {
+  color: white;
+  font-size: 25px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.bi-star:hover {
+  scale: 1.1;
+}
+
+.bi-star-fill {
+  font-size: 17px;
+}
+
+.bi-star-fill.active {
+  color: var(--yellowColor);
+}
+
+.bi-star-fill.starOp {
+  color: yellow;
+  font-size: 25px;
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.bi-calendar-fill {
+  font-size: 14px;
+}
+
+.bi-calendar-fill.active {
+  color: var(--greenColor);
+}
+
+@media only screen and (min-width: 280px) {
+  /* .nContainer {
+    left: 8%;
+  } */
+}

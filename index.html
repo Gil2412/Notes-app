@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <title>Notes</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="searchContainer">
+        <input
+          type="text"
+          name="searchLine"
+          id="searchLine"
+          placeholder="Search..."
+        />
+        <i class="bi-search" id="searchIcon"></i>
+      </div>
+      <div class="filterBtnsContainer">
+        <div class="filterBtn" id="starFilter">
+          <i class="bi-star-fill"></i>
+        </div>
+        <div class="filterBtn" id="dateFilter">
+          <i class="bi-calendar-fill"></i>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <div class="delAllPopUP">
+        <span id="popUpTitle">Are you sure?</span>
+        <span id="popUpText">All your notes will be deleted immediately</span>
+        <div class="btnsContainer">
+          <button class="popUpBtn" id="acceptBtn">Accept</button>
+          <button class="popUpBtn" id="cancelBtn">Cancel</button>
+        </div>
+      </div>
+      <i class="bi-list"></i>
+      <form class="formContainer"> 
+        <i class="bi-trash3-fill form" id="delAllBtn"></i>
+        <div class="titleContainer">
+          <input type="text" id="titleInput" name="titleInput" maxlength="23" />
+          <label for="titleInput" id="titleInputLabel">Title</label>
+        </div>
+        <div class="textInputContainer">
+          <textarea
+            name="nBodyText"
+            id="nBodyText"
+            maxlength="180"
+            required
+          ></textarea>
+          <label for="nBodyText" id="nBodyTextLabel">Note text</label>
+        </div>
+        <div class="dateContainer">
+          <label for="nDate" id="nDateLable">Due in date:</label>
+          <input
+            type="date"
+            name="nDate"
+            id="nDate"
+            pattern="\d{2}-\d{2}-\d{4}/"
+          />
+        </div>
+        <select name="nColor" id="nColor">
+          <option value="" selected>Note color</option>
+          <option value="1">Blue</option>
+          <option value="2">Green</option>
+          <option value="3">Pink</option>
+          <option value="4">Purple</option>
+          <option value="5">Orange</option>
+          <option value="6">red</option>
+        </select>
+        <i class="bi-caret-down-fill"></i>
+        <button type="button" id="submitBtn">Submit</button>
+      </form>
+      <div class="popUpBackground"></div>
+      <div class="nContainer"></div>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="./script.js" type="module"></script>
+</html>
